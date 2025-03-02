@@ -1,7 +1,7 @@
-CREATE DATABASE client;
+CREATE DATABASE customer;
 CREATE DATABASE account;
 
-\c client
+\c customer
 
 CREATE type gender AS enum (
   'MALE',
@@ -13,20 +13,20 @@ CREATE CAST (varchar AS gender) WITH INOUT AS IMPLICIT;
 CREATE TABLE person (
   id             SERIAL NOT NULL, 
   name           varchar(100) NOT NULL, 
-  gender	     gender NOT NULL,
+  gender	       gender NOT NULL,
   age            integer NOT NULL, 
   identification varchar(13) NOT NULL UNIQUE, 
   address        varchar(100) NOT NULL, 
   phone          varchar(10) NOT NULL, 
   PRIMARY KEY (id));
   
-CREATE TABLE client (
+CREATE TABLE customer (
   id       integer NOT NULL, 
-  password varchar(50) NOT NULL, 
-  status   char(1) NOT NULL, 
+  password varchar(255) NOT NULL, 
+  active   boolean NOT NULL, 
   PRIMARY KEY (id));
   
-ALTER TABLE client ADD CONSTRAINT FKclient546991 FOREIGN KEY (id) REFERENCES person (id);
+ALTER TABLE customer ADD CONSTRAINT FKclient546991 FOREIGN KEY (id) REFERENCES person (id);
 
 \c account
 
@@ -49,7 +49,7 @@ CREATE TABLE account (
   account_number  varchar(10) NOT NULL UNIQUE, 
   account_type    account_type NOT NULL, 
   initial_balance numeric(10, 2) NOT NULL, 
-  status          char(1) NOT NULL, 
+  status          boolean NOT NULL, 
   client_id       integer NOT NULL, 
   PRIMARY KEY (id));  
   
