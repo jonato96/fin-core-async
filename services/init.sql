@@ -49,17 +49,18 @@ CREATE TABLE account (
   account_number  varchar(10) NOT NULL UNIQUE, 
   account_type    account_type NOT NULL, 
   initial_balance numeric(10, 2) NOT NULL, 
-  status          boolean NOT NULL, 
-  client_id       integer NOT NULL, 
+  active          boolean NOT NULL, 
+  customer_id     integer NOT NULL, 
   PRIMARY KEY (id));  
   
-CREATE TABLE movements (
+CREATE TABLE movement (
   id            SERIAL NOT NULL, 
   amount        numeric(10, 2) NOT NULL, 
-  movement_date date NOT NULL, 
-  balance       numeric(10, 2) NOT NULL, 
+  created_date date NOT NULL, 
+  before_balance numeric(10,2) not null,
+  after_balance numeric(10,2) not null,
   movement_type movement_type NOT NULL, 
   account_id    integer NOT NULL, 
   PRIMARY KEY (id));
   
-ALTER TABLE movements ADD CONSTRAINT FKmovements693098 FOREIGN KEY (account_id) REFERENCES account (id);
+ALTER TABLE movement ADD CONSTRAINT FKmovement693098 FOREIGN KEY (account_id) REFERENCES account (id);

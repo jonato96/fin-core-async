@@ -15,3 +15,15 @@ services:
       interval: 10s
       retries: 5
       start_period: 20s
+  
+  rabbitmq:
+      image: rabbitmq:3-management
+      container_name: rabbitmq
+      ports:
+        - 5672:5672
+        - 15672:15672
+      healthcheck:
+        test: ["CMD", "rabbitmqctl", "status"]
+        interval: 10s
+        retries: 5
+        start_period: 20s

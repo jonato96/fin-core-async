@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.neoris</groupId>
-	<artifactId>customer-service</artifactId>
+	<artifactId>account-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>customer-service</name>
-	<description>Customer Spring Boot Microservice</description>
+	<name>account-service</name>
+	<description>Account Spring Boot Microservice</description>
 	<url/>
 	<licenses>
 		<license/>

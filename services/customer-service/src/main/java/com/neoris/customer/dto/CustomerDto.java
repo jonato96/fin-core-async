@@ -1,5 +1,6 @@
 package com.neoris.customer.dto;
 
+import com.neoris.customer.helper.Gender;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -13,8 +14,8 @@ import lombok.Builder;
 public record CustomerDto(
         @NotBlank(message = "Customer name is required")
         String name,
-        @NotBlank(message = "Customer gender is required")
-        String gender,
+        @NotNull(message = "Customer gender is required")
+        Gender gender,
         @NotNull(message = "Customer age is required")
         @Min(18)
         @Max(110)
