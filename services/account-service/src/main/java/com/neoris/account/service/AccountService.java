@@ -8,7 +8,6 @@ import com.neoris.account.dto.AccountResponseDto;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public interface AccountService {
     AccountResponseDto save(AccountDto requestAccount) throws Exception;
