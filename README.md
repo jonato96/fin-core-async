@@ -34,7 +34,7 @@ Es necesario tener Git, Maven y Docker instalado en tu computadora antes de corr
 Clonar el repositorio
 
 ```bash
-  git clone https://github.com/jonato96/fin-core.asyn.git
+  git clone https://github.com/jonato96/fin-core-async.git
 ```
 
 Ir al directorio --services-- dentro del proyecto
@@ -64,9 +64,21 @@ En el directorio services encontraremos un archivo docker compose
   docker-compose up
 ```
 
-Por defecto la aplicación se podrá consumir mediante la ruta http://localhost:9090 habilitada por el api gateway.
+Por defecto el servicio de Customer se levanta en el puerto 8080 y el servicio de Account se levanta en el puerto 8081, ambos se podrán consumir mediante la ruta http://localhost:9090 habilitada por el api gateway.
 Para probar los recursos se adjunta en el directorio de deliverables la colleccion de postman.
 
+```bash
+  http://localhost:9090/api/customers
+  http://localhost:9090/api/accounts
+  http://localhost:9090/api/movements
+```
+
+Tambien se puede ver la documentación de los recursos usando swagger
+
+```bash
+  http://localhost:8080/swagger-ui/index.html
+  http://localhost:8081/swagger-ui/index.html
+```
 
 ## 🧪 Ejecutar Tests
 
