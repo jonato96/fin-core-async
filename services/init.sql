@@ -13,7 +13,7 @@ CREATE CAST (varchar AS gender) WITH INOUT AS IMPLICIT;
 CREATE TABLE person (
   id             SERIAL NOT NULL, 
   name           varchar(100) NOT NULL, 
-  gender	       gender NOT NULL,
+  gender	     gender NOT NULL,
   age            integer NOT NULL, 
   identification varchar(13) NOT NULL UNIQUE, 
   address        varchar(100) NOT NULL, 
@@ -54,13 +54,13 @@ CREATE TABLE account (
   PRIMARY KEY (id));  
   
 CREATE TABLE movement (
-  id            SERIAL NOT NULL, 
-  amount        numeric(10, 2) NOT NULL, 
-  created_date date NOT NULL, 
+  id             SERIAL NOT NULL,
+  amount         numeric(10, 2) NOT NULL,
+  created_date   date NOT NULL,
   before_balance numeric(10,2) not null,
-  after_balance numeric(10,2) not null,
-  movement_type movement_type NOT NULL, 
-  account_id    integer NOT NULL, 
+  after_balance  numeric(10,2) not null,
+  movement_type  movement_type NOT NULL,
+  account_id     integer NOT NULL,
   PRIMARY KEY (id));
   
 ALTER TABLE movement ADD CONSTRAINT FKmovement693098 FOREIGN KEY (account_id) REFERENCES account (id);

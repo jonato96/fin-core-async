@@ -94,16 +94,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/customers/2",
+							"raw": "http://localhost:9090/api/customers/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "9090",
 							"path": [
 								"api",
 								"customers",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -115,16 +115,16 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/customers/3",
+							"raw": "http://localhost:9090/api/customers/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "9090",
 							"path": [
 								"api",
 								"customers",
-								"3"
+								"1"
 							]
 						}
 					},
@@ -142,7 +142,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{        \r\n    \"accountNumber\": \"1500005646\",\r\n    \"clientId\": 1,\r\n    \"type\": \"SAVING\",\r\n    \"balance\": 100.00\r\n}",
+							"raw": "{        \r\n    \"accountNumber\": \"1500005646\",\r\n    \"customerId\": 1,\r\n    \"type\": \"SAVING\",\r\n    \"balance\": 100.00\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -150,12 +150,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/api/accounts",
+							"raw": "http://localhost:9090/api/accounts",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "9090",
 							"path": [
 								"api",
 								"accounts"
@@ -170,12 +170,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/accounts/1",
+							"raw": "http://localhost:9090/api/accounts/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "9090",
 							"path": [
 								"api",
 								"accounts",
@@ -191,16 +191,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/accounts/1",
+							"raw": "http://localhost:9090/api/accounts",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "9090",
 							"path": [
 								"api",
-								"accounts",
-								"1"
+								"accounts"
 							]
 						}
 					},
@@ -212,12 +211,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/accounts/1",
+							"raw": "http://localhost:9090/api/accounts/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "9090",
 							"path": [
 								"api",
 								"accounts",
@@ -239,7 +238,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"type\": \"CREDIT\",\r\n    \"amount\": 1.00,\r\n    \"accountId\": 1\r\n}",
+							"raw": "{   \r\n    \"type\": \"CREDIT\",\r\n    \"amount\": 1.00,\r\n    \"accountId\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -247,12 +246,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/api/movements",
+							"raw": "http://localhost:9090/api/movements",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "9090",
 							"path": [
 								"api",
 								"movements"
@@ -267,7 +266,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/transactions/1",
+							"raw": "http://localhost:8081/api/movements/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -275,7 +274,7 @@
 							"port": "8081",
 							"path": [
 								"api",
-								"transactions",
+								"movements",
 								"1"
 							]
 						}
@@ -288,12 +287,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/movements/report?customerId=1&startDate=2025-03-02&endDate=2025-03-02",
+							"raw": "http://localhost:9090/api/movements/report?customerId=1&startDate=2025-03-02&endDate=2025-03-04",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "9090",
 							"path": [
 								"api",
 								"movements",
@@ -310,29 +309,8 @@
 								},
 								{
 									"key": "endDate",
-									"value": "2025-03-02"
+									"value": "2025-03-04"
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete-movement",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8081/api/transactions/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"api",
-								"transactions",
-								"1"
 							]
 						}
 					},
@@ -344,20 +322,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/transactions?accountNumber=1500005646",
+							"raw": "http://localhost:9090/api/movements?accountNumber=1500105646",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "9090",
 							"path": [
 								"api",
-								"transactions"
+								"movements"
 							],
 							"query": [
 								{
 									"key": "accountNumber",
-									"value": "1500005646"
+									"value": "1500105646"
 								}
 							]
 						}
