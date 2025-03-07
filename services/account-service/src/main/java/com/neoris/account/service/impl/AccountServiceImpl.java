@@ -1,6 +1,5 @@
 package com.neoris.account.service.impl;
 
-
 import com.neoris.account.domain.Account;
 import com.neoris.account.dto.AccountDto;
 import com.neoris.account.dto.AccountResponseDto;
@@ -16,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
-
 
 @Service
 @RequiredArgsConstructor

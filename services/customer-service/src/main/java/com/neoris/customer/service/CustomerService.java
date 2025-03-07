@@ -1,8 +1,5 @@
 package com.neoris.customer.service;
 
-
-
-import com.neoris.customer.domain.Customer;
 import com.neoris.customer.dto.CustomerDto;
 import com.neoris.customer.dto.CustomerResponseDto;
 
